@@ -11654,10 +11654,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11666,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11726,7 +11722,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11745,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11773,7 +11771,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -11787,7 +11785,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;movies.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -11807,9 +11805,7 @@ div#notebook {
 
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[125]:</div>
-
+<div class="prompt output_prompt">Out[13]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12465,7 +12461,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
@@ -12480,9 +12476,7 @@ div#notebook {
 
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[126]:</div>
-
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -12559,7 +12553,7 @@ Name: Title, Length: 11438, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span> <span class="o">=</span> <span class="n">df_movies</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_movies</span><span class="o">.</span><span class="n">notna</span><span class="p">()[</span><span class="s1">&#39;Title&#39;</span><span class="p">]]</span>
@@ -12572,7 +12566,7 @@ Name: Title, Length: 11438, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
@@ -12587,9 +12581,7 @@ Name: Title, Length: 11438, dtype: bool</pre>
 
 
 <div class="output_area">
-
 <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/home/prakhar/Desktop/pandas/venv/lib/python2.7/site-packages/ipykernel_launcher.py:1: SettingWithCopyWarning: 
@@ -12608,10 +12600,11 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_awards</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;awards.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_awards</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;notes&#39;</span><span class="p">,</span><span class="s1">&#39;|&#39;</span><span class="p">,</span><span class="s1">&#39;Unnamed: 7&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">df_awards</span>
 </pre></div>
 
@@ -12624,9 +12617,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[129]:</div>
-
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12653,9 +12644,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <th>Country</th>
       <th>colloquial</th>
       <th>year</th>
-      <th>notes</th>
-      <th>|</th>
-      <th>Unnamed: 7</th>
     </tr>
   </thead>
   <tbody>
@@ -12666,9 +12654,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Oscar</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
@@ -12677,9 +12662,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Oscar nomination</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
@@ -12688,9 +12670,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>annual awards since 1973</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
@@ -12699,9 +12678,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Best movies poll 1977</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
@@ -12710,9 +12686,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>F.R.Germany</td>
       <td>Berliner Baer(-Gold,Silver,Bronze)</td>
       <td>1951</td>
-      <td>[24]</td>
-      <td>|</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>5</th>
@@ -12721,9 +12694,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Great Britain</td>
       <td>Stella</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>6</th>
@@ -12732,9 +12702,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>NaN</td>
       <td>1987</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>7</th>
@@ -12743,9 +12710,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>NaN</td>
       <td>&lt;1991</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>8</th>
@@ -12754,9 +12718,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>France</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>|</td>
     </tr>
     <tr>
       <th>9</th>
@@ -12765,9 +12726,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Emmy</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>10</th>
@@ -12776,9 +12734,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>[25]</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>11</th>
@@ -12787,9 +12742,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Europe</td>
       <td>1988</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>12</th>
@@ -12798,9 +12750,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Canada</td>
       <td>&lt;1991</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>13</th>
@@ -12809,9 +12758,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Great Britain</td>
       <td>four stars</td>
       <td>1983</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>14</th>
@@ -12820,9 +12766,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Great Britain</td>
       <td>three stars</td>
       <td>1983</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>15</th>
@@ -12831,9 +12774,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Great Britain</td>
       <td>two stars</td>
       <td>1983</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>16</th>
@@ -12842,9 +12782,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Great Britain</td>
       <td>one star</td>
       <td>1983</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>17</th>
@@ -12853,9 +12790,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Great Britain</td>
       <td>cited</td>
       <td>1983</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>18</th>
@@ -12864,9 +12798,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>humanitarian</td>
       <td>1983?</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>19</th>
@@ -12875,9 +12806,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>NaN</td>
       <td>1985</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>20</th>
@@ -12886,9 +12814,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Life Achievement Award</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>21</th>
@@ -12897,9 +12822,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Film Festival</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>22</th>
@@ -12907,9 +12829,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>National Board of Reviews</td>
       <td>USA</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -12919,9 +12838,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Library of Congress</td>
       <td>since 1992</td>
-      <td>Nt(Public Law 102-307) Nt(100 films as of 1992)</td>
-      <td>|</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>24</th>
@@ -12929,9 +12845,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>New York Film Critics Circle</td>
       <td>USA</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -12941,9 +12854,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>NaN</td>
       <td>since 1965|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>26</th>
@@ -12952,9 +12862,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>\GB</td>
       <td>Royal Film Performance</td>
       <td>since 1946</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>27</th>
@@ -12963,9 +12870,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>France AD</td>
       <td>Golden Palm</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>28</th>
@@ -12973,9 +12877,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>San Francisco International Film Festival</td>
       <td>USA</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -12985,9 +12886,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Thalberg Memorial Award</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>30</th>
@@ -12996,9 +12894,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Tony</td>
       <td>Nt(TV)</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>31</th>
@@ -13007,9 +12902,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>Movies of the dcecade</td>
       <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>32</th>
@@ -13017,9 +12909,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Venice Film Festival</td>
       <td>Italy</td>
       <td>Venice|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -13029,9 +12918,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>USA</td>
       <td>WAMPAS</td>
       <td>promising actress 1922-1934</td>
-      <td>|</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>34</th>
@@ -13039,9 +12925,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <td>Fred Zinneman</td>
       <td>book</td>
       <td>Z* [x]|</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -13057,7 +12940,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_cast</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cast.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13073,9 +12956,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[130]:</div>
-
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -13669,7 +13550,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_actors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;actors.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13685,9 +13566,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[131]:</div>
-
+<div class="prompt output_prompt">Out[19]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -14653,7 +14532,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_primary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;IMDB-Movie-Data.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;Rank&#39;</span><span class="p">)</span>
@@ -14667,7 +14546,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[133]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_primary</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df_primary</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
@@ -14680,7 +14559,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[134]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#df_actors</span>
@@ -14697,7 +14576,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[135]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">fuzzywuzzy</span> <span class="kn">import</span> <span class="n">fuzz</span>
@@ -14710,7 +14589,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[136]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sim_lis</span><span class="o">=</span><span class="p">[]</span>
@@ -14732,9 +14611,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-
 <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/home/prakhar/Desktop/pandas/venv/lib/python2.7/site-packages/ipykernel_launcher.py:8: SettingWithCopyWarning: 
@@ -14753,7 +14630,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[137]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span><span class="p">[</span><span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
@@ -14768,9 +14645,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[137]:</div>
-
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -15426,7 +15301,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movie_to_merge</span> <span class="o">=</span> <span class="n">df_movies</span><span class="p">[</span><span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
@@ -15439,7 +15314,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[139]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movie_to_merge</span>
@@ -15454,9 +15329,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[139]:</div>
-
+<div class="prompt output_prompt">Out[27]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -16112,7 +15985,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[140]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">merged_df</span> <span class="o">=</span> <span class="n">df_primary</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_movie_to_merge</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
@@ -16125,7 +15998,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[141]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">merged_df</span>
@@ -16140,9 +16013,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[141]:</div>
-
+<div class="prompt output_prompt">Out[29]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
