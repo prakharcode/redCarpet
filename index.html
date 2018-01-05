@@ -11654,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11666,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11722,9 +11726,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11745,7 +11747,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,7 +11773,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -11785,7 +11787,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;movies.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -11805,7 +11807,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[13]:</div>
+
+<div class="prompt output_prompt">Out[2]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12461,7 +12465,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
@@ -12476,7 +12480,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[14]:</div>
+
+<div class="prompt output_prompt">Out[3]:</div>
+
 
 
 
@@ -12553,7 +12559,7 @@ Name: Title, Length: 11438, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span> <span class="o">=</span> <span class="n">df_movies</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_movies</span><span class="o">.</span><span class="n">notna</span><span class="p">()[</span><span class="s1">&#39;Title&#39;</span><span class="p">]]</span>
@@ -12566,7 +12572,7 @@ Name: Title, Length: 11438, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
@@ -12581,10 +12587,12 @@ Name: Title, Length: 11438, dtype: bool</pre>
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/prakhar/Desktop/pandas/venv/lib/python2.7/site-packages/ipykernel_launcher.py:1: SettingWithCopyWarning: 
+<pre>/home/prakhar/Desktop/RedCarpet/venv/lib/python2.7/site-packages/ipykernel_launcher.py:1: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -12600,7 +12608,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_awards</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;awards.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -12617,7 +12625,9 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[17]:</div>
+
+<div class="prompt output_prompt">Out[6]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12940,7 +12950,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_cast</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cast.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -12956,7 +12966,9 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[18]:</div>
+
+<div class="prompt output_prompt">Out[7]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -13550,7 +13562,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_actors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;actors.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13566,7 +13578,9 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[19]:</div>
+
+<div class="prompt output_prompt">Out[8]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -14532,7 +14546,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_primary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;IMDB-Movie-Data.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;Rank&#39;</span><span class="p">)</span>
@@ -14546,7 +14560,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_primary</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df_primary</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
@@ -14559,7 +14573,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#df_actors</span>
@@ -14576,7 +14590,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">fuzzywuzzy</span> <span class="kn">import</span> <span class="n">fuzz</span>
@@ -14589,7 +14603,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">sim_lis</span><span class="o">=</span><span class="p">[]</span>
@@ -14611,10 +14625,12 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/prakhar/Desktop/pandas/venv/lib/python2.7/site-packages/ipykernel_launcher.py:8: SettingWithCopyWarning: 
+<pre>/home/prakhar/Desktop/RedCarpet/venv/lib/python2.7/site-packages/ipykernel_launcher.py:8: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -14630,7 +14646,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movies</span><span class="p">[</span><span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
@@ -14645,7 +14661,9 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[25]:</div>
+
+<div class="prompt output_prompt">Out[14]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -15301,7 +15319,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movie_to_merge</span> <span class="o">=</span> <span class="n">df_movies</span><span class="p">[</span><span class="n">df_movies</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
@@ -15314,7 +15332,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_movie_to_merge</span>
@@ -15329,7 +15347,9 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[27]:</div>
+
+<div class="prompt output_prompt">Out[16]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -15985,7 +16005,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">merged_df</span> <span class="o">=</span> <span class="n">df_primary</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_movie_to_merge</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
@@ -15998,7 +16018,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">merged_df</span>
@@ -16013,7 +16033,9 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[29]:</div>
+
+<div class="prompt output_prompt">Out[18]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -17279,6 +17301,1095 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </table>
 <p>323 rows × 17 columns</p>
 </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">df_primary</span><span class="p">[</span><span class="n">df_primary</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2016</span><span class="p">][[</span><span class="s1">&#39;Rating&#39;</span><span class="p">,</span><span class="s1">&#39;Votes&#39;</span><span class="p">,</span> <span class="s1">&#39;Revenue (Millions)&#39;</span><span class="p">,</span><span class="s1">&#39;Metascore&#39;</span><span class="p">]]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df_train</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">df_train</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rating</th>
+      <th>Votes</th>
+      <th>Revenue (Millions)</th>
+      <th>Metascore</th>
+    </tr>
+    <tr>
+      <th>Rank</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>837</th>
+      <td>7.5</td>
+      <td>5531</td>
+      <td>0.13</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7.1</td>
+      <td>7188</td>
+      <td>8.01</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6.2</td>
+      <td>393727</td>
+      <td>325.02</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>6.4</td>
+      <td>78328</td>
+      <td>55.12</td>
+      <td>59.0</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>8.1</td>
+      <td>33418</td>
+      <td>2.01</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>7.5</td>
+      <td>198243</td>
+      <td>364.00</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>7.7</td>
+      <td>115546</td>
+      <td>26.86</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>7.4</td>
+      <td>47694</td>
+      <td>14.26</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>7.2</td>
+      <td>192968</td>
+      <td>71.90</td>
+      <td>76.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.3</td>
+      <td>157606</td>
+      <td>138.12</td>
+      <td>62.0</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>6.2</td>
+      <td>97623</td>
+      <td>34.26</td>
+      <td>42.0</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>6.4</td>
+      <td>50853</td>
+      <td>55.47</td>
+      <td>66.0</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>5.9</td>
+      <td>9993</td>
+      <td>54.01</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>5.8</td>
+      <td>4299</td>
+      <td>0.20</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>6.3</td>
+      <td>10181</td>
+      <td>1.29</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6.1</td>
+      <td>56036</td>
+      <td>45.13</td>
+      <td>42.0</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>6.6</td>
+      <td>69651</td>
+      <td>38.56</td>
+      <td>58.0</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>5.4</td>
+      <td>1954</td>
+      <td>1.66</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>7.4</td>
+      <td>157026</td>
+      <td>486.29</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>7.3</td>
+      <td>50953</td>
+      <td>57.64</td>
+      <td>79.0</td>
+    </tr>
+    <tr>
+      <th>867</th>
+      <td>6.9</td>
+      <td>7402</td>
+      <td>3.40</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>6.3</td>
+      <td>3712</td>
+      <td>10.16</td>
+      <td>44.0</td>
+    </tr>
+    <tr>
+      <th>881</th>
+      <td>6.9</td>
+      <td>8365</td>
+      <td>1.91</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8.3</td>
+      <td>258682</td>
+      <td>151.06</td>
+      <td>93.0</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>6.7</td>
+      <td>101058</td>
+      <td>87.24</td>
+      <td>57.0</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>6.2</td>
+      <td>50359</td>
+      <td>1.33</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.2</td>
+      <td>60545</td>
+      <td>270.32</td>
+      <td>59.0</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>6.3</td>
+      <td>117590</td>
+      <td>126.59</td>
+      <td>44.0</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>5.8</td>
+      <td>30761</td>
+      <td>54.73</td>
+      <td>42.0</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>6.0</td>
+      <td>53183</td>
+      <td>46.01</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>7.9</td>
+      <td>72778</td>
+      <td>48.02</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>8.0</td>
+      <td>52144</td>
+      <td>3.23</td>
+      <td>79.0</td>
+    </tr>
+    <tr>
+      <th>279</th>
+      <td>7.0</td>
+      <td>36312</td>
+      <td>3.37</td>
+      <td>83.0</td>
+    </tr>
+    <tr>
+      <th>712</th>
+      <td>7.6</td>
+      <td>11482</td>
+      <td>0.92</td>
+      <td>86.0</td>
+    </tr>
+    <tr>
+      <th>287</th>
+      <td>5.8</td>
+      <td>30405</td>
+      <td>14.90</td>
+      <td>34.0</td>
+    </tr>
+    <tr>
+      <th>708</th>
+      <td>6.5</td>
+      <td>5908</td>
+      <td>1.02</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>289</th>
+      <td>5.8</td>
+      <td>26508</td>
+      <td>17.36</td>
+      <td>47.0</td>
+    </tr>
+    <tr>
+      <th>291</th>
+      <td>7.5</td>
+      <td>58782</td>
+      <td>2.13</td>
+      <td>72.0</td>
+    </tr>
+    <tr>
+      <th>293</th>
+      <td>5.7</td>
+      <td>76327</td>
+      <td>55.29</td>
+      <td>58.0</td>
+    </tr>
+    <tr>
+      <th>296</th>
+      <td>6.6</td>
+      <td>20514</td>
+      <td>18.71</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>5.7</td>
+      <td>34523</td>
+      <td>64.06</td>
+      <td>34.0</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>7.1</td>
+      <td>43929</td>
+      <td>15.43</td>
+      <td>66.0</td>
+    </tr>
+    <tr>
+      <th>267</th>
+      <td>6.0</td>
+      <td>75137</td>
+      <td>35.54</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>265</th>
+      <td>6.0</td>
+      <td>59312</td>
+      <td>0.54</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>724</th>
+      <td>5.1</td>
+      <td>26088</td>
+      <td>20.75</td>
+      <td>47.0</td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>7.1</td>
+      <td>664</td>
+      <td>2.27</td>
+      <td>76.0</td>
+    </tr>
+    <tr>
+      <th>226</th>
+      <td>7.0</td>
+      <td>19660</td>
+      <td>0.66</td>
+      <td>79.0</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>5.2</td>
+      <td>3305</td>
+      <td>0.00</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <th>749</th>
+      <td>6.1</td>
+      <td>30035</td>
+      <td>34.90</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>6.1</td>
+      <td>66766</td>
+      <td>47.95</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>6.8</td>
+      <td>41446</td>
+      <td>13.96</td>
+      <td>81.0</td>
+    </tr>
+    <tr>
+      <th>742</th>
+      <td>6.6</td>
+      <td>8998</td>
+      <td>4.71</td>
+      <td>54.0</td>
+    </tr>
+    <tr>
+      <th>741</th>
+      <td>5.4</td>
+      <td>29642</td>
+      <td>63.03</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>735</th>
+      <td>7.7</td>
+      <td>16163</td>
+      <td>0.69</td>
+      <td>37.0</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>5.8</td>
+      <td>1109</td>
+      <td>9.40</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>7.4</td>
+      <td>14708</td>
+      <td>5.66</td>
+      <td>83.0</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>4.9</td>
+      <td>178</td>
+      <td>0.32</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>6.4</td>
+      <td>69823</td>
+      <td>67.24</td>
+      <td>58.0</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>3.9</td>
+      <td>4895</td>
+      <td>2.41</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>1000</th>
+      <td>5.3</td>
+      <td>12435</td>
+      <td>19.64</td>
+      <td>11.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>198 rows × 4 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span><span class="p">,</span><span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[[</span><span class="s1">&#39;Votes&#39;</span><span class="p">,</span><span class="s1">&#39;Revenue (Millions)&#39;</span><span class="p">,</span><span class="s1">&#39;Metascore&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">SVR</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(       Votes  Revenue (Millions)  Metascore
+ Rank                                       
+ 235    66766               47.95       35.0
+ 279    36312                3.37       83.0
+ 322      616                0.01       74.0
+ 74     43977               30.98       23.0
+ 680     2403                0.54       78.0
+ 483    48400               12.63       52.0
+ 463     8229                4.07       63.0
+ 185    22389                3.40       85.0
+ 39    122853               93.38       54.0
+ 837     5531                0.13       84.0
+ 20    340798              100.50       81.0
+ 31     48123               60.31       39.0
+ 532    12758               64.03       59.0
+ 218     7044               33.04       41.0
+ 153     4299                0.20       65.0
+ 107     1954                1.66       40.0
+ 24     38552              153.69       56.0
+ 370    28326               26.38       38.0
+ 33    275510              155.33       52.0
+ 462    51235               35.79       42.0
+ 3     157606              138.12       62.0
+ 5     393727              325.02       40.0
+ 376     7583                2.20       33.0
+ 75    296853              341.26       78.0
+ 106   115546               26.86       88.0
+ 146    33418                2.01       84.0
+ 70     89849               61.28       68.0
+ 6      56036               45.13       42.0
+ 133    78328               55.12       59.0
+ 617      277               20.76       53.0
+ ...      ...                 ...        ...
+ 69       291                0.01       61.0
+ 259    69823               67.24       58.0
+ 476    56332               15.79       54.0
+ 794     4370                0.29       85.0
+ 749    30035               34.90       65.0
+ 391    31913               20.57       63.0
+ 423    35003               10.91       45.0
+ 881     8365                1.91       68.0
+ 365    89059               30.00       72.0
+ 57    121103               89.21       71.0
+ 99     10181                1.29       77.0
+ 824     5855                0.30       72.0
+ 119   192968               71.90       76.0
+ 251      178                0.32       50.0
+ 265    59312                0.54       40.0
+ 30    112813               54.65       36.0
+ 90    162122               86.20       51.0
+ 15      8612                2.87       70.0
+ 22    134213               47.70       96.0
+ 92    187547               47.17       32.0
+ 162     6946                1.80       63.0
+ 131    50953               57.64       79.0
+ 354    45579               11.08       64.0
+ 87     27869               10.38       49.0
+ 856     9993               54.01       67.0
+ 975     6753                8.81       73.0
+ 226    19660                0.66       79.0
+ 179   137203              102.46       65.0
+ 147    47694               14.26       77.0
+ 12     93103              169.27       74.0
+ 
+ [138 rows x 3 columns], Rank
+ 235    6.1
+ 279    7.0
+ 322    6.4
+ 74     6.8
+ 680    7.2
+ 483    6.3
+ 463    6.6
+ 185    8.0
+ 39     6.9
+ 837    7.5
+ 20     8.0
+ 31     6.3
+ 532    5.4
+ 218    5.7
+ 153    5.8
+ 107    5.4
+ 24     6.5
+ 370    5.7
+ 33     7.1
+ 462    6.0
+ 3      7.3
+ 5      6.2
+ 376    5.7
+ 75     8.1
+ 106    7.7
+ 146    8.1
+ 70     7.2
+ 6      6.1
+ 133    6.4
+ 617    4.0
+       ... 
+ 69     7.5
+ 259    6.4
+ 476    7.4
+ 794    7.8
+ 749    6.1
+ 391    6.3
+ 423    5.8
+ 881    6.9
+ 365    6.3
+ 57     7.2
+ 99     6.3
+ 824    7.0
+ 119    7.2
+ 251    4.9
+ 265    6.0
+ 30     5.9
+ 90     7.4
+ 15     6.4
+ 22     7.9
+ 92     7.0
+ 162    7.0
+ 131    7.3
+ 354    6.7
+ 87     6.4
+ 856    5.9
+ 975    7.4
+ 226    7.0
+ 179    7.4
+ 147    7.4
+ 12     7.8
+ Name: Rating, Length: 138, dtype: float64)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>SVR(C=0.8, cache_size=200, coef0=0.0, degree=3, epsilon=0.2, gamma=&#39;auto&#39;,
+  kernel=&#39;rbf&#39;, max_iter=-1, shrinking=True, tol=0.001, verbose=False)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.78039325842696683</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span> <span class="mi">93103</span><span class="p">,</span><span class="mf">169.27</span><span class="p">,</span><span class="mf">74.0</span><span class="p">]])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[29]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 7.45955056])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">y_train_clf</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">round</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">y_test_clf</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">round</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_clf</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(       Votes  Revenue (Millions)  Metascore
+ Rank                                       
+ 235    66766               47.95       35.0
+ 279    36312                3.37       83.0
+ 322      616                0.01       74.0
+ 74     43977               30.98       23.0
+ 680     2403                0.54       78.0
+ 483    48400               12.63       52.0
+ 463     8229                4.07       63.0
+ 185    22389                3.40       85.0
+ 39    122853               93.38       54.0
+ 837     5531                0.13       84.0
+ 20    340798              100.50       81.0
+ 31     48123               60.31       39.0
+ 532    12758               64.03       59.0
+ 218     7044               33.04       41.0
+ 153     4299                0.20       65.0
+ 107     1954                1.66       40.0
+ 24     38552              153.69       56.0
+ 370    28326               26.38       38.0
+ 33    275510              155.33       52.0
+ 462    51235               35.79       42.0
+ 3     157606              138.12       62.0
+ 5     393727              325.02       40.0
+ 376     7583                2.20       33.0
+ 75    296853              341.26       78.0
+ 106   115546               26.86       88.0
+ 146    33418                2.01       84.0
+ 70     89849               61.28       68.0
+ 6      56036               45.13       42.0
+ 133    78328               55.12       59.0
+ 617      277               20.76       53.0
+ ...      ...                 ...        ...
+ 69       291                0.01       61.0
+ 259    69823               67.24       58.0
+ 476    56332               15.79       54.0
+ 794     4370                0.29       85.0
+ 749    30035               34.90       65.0
+ 391    31913               20.57       63.0
+ 423    35003               10.91       45.0
+ 881     8365                1.91       68.0
+ 365    89059               30.00       72.0
+ 57    121103               89.21       71.0
+ 99     10181                1.29       77.0
+ 824     5855                0.30       72.0
+ 119   192968               71.90       76.0
+ 251      178                0.32       50.0
+ 265    59312                0.54       40.0
+ 30    112813               54.65       36.0
+ 90    162122               86.20       51.0
+ 15      8612                2.87       70.0
+ 22    134213               47.70       96.0
+ 92    187547               47.17       32.0
+ 162     6946                1.80       63.0
+ 131    50953               57.64       79.0
+ 354    45579               11.08       64.0
+ 87     27869               10.38       49.0
+ 856     9993               54.01       67.0
+ 975     6753                8.81       73.0
+ 226    19660                0.66       79.0
+ 179   137203              102.46       65.0
+ 147    47694               14.26       77.0
+ 12     93103              169.27       74.0
+ 
+ [138 rows x 3 columns], Rank
+ 235    6
+ 279    7
+ 322    6
+ 74     7
+ 680    7
+ 483    6
+ 463    7
+ 185    8
+ 39     7
+ 837    8
+ 20     8
+ 31     6
+ 532    5
+ 218    6
+ 153    6
+ 107    5
+ 24     7
+ 370    6
+ 33     7
+ 462    6
+ 3      7
+ 5      6
+ 376    6
+ 75     8
+ 106    8
+ 146    8
+ 70     7
+ 6      6
+ 133    6
+ 617    4
+       ..
+ 69     8
+ 259    6
+ 476    7
+ 794    8
+ 749    6
+ 391    6
+ 423    6
+ 881    7
+ 365    6
+ 57     7
+ 99     6
+ 824    7
+ 119    7
+ 251    5
+ 265    6
+ 30     6
+ 90     7
+ 15     6
+ 22     8
+ 92     7
+ 162    7
+ 131    7
+ 354    7
+ 87     6
+ 856    6
+ 975    7
+ 226    7
+ 179    7
+ 147    7
+ 12     8
+ Name: Rating, Length: 138, dtype: int64)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf_class</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf_class</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_clf</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=&#39;ovr&#39;, degree=3, gamma=&#39;auto&#39;, kernel=&#39;rbf&#39;,
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test_clf</span><span class="p">,</span><span class="n">clf_class</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.78333333333333333</pre>
 </div>
 
 </div>
